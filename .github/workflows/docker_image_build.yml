@@ -9,7 +9,7 @@ on:
 env:
   REGISTRY: hub.docker.com
   IMAGE_NAME: test-go-app
-  DOCKER_REPO_NAME: ${{ secrets.DOCKER_USER }}/${{ env.IMAGE_NAME }}
+  DOCKER_REPO_NAME: ${{ secrets.DOCKER_USER }}/${{ IMAGE_NAME }}
   DOCKER_USER: ${{ secrets.DOCKER_USER }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
