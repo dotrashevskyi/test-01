@@ -7,11 +7,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  test-source-code:
-    runs-on: ubuntu-latest
-    steps:
-
-
   publish-docker-image:
     runs-on: ubuntu-latest
     steps:
