@@ -37,5 +37,5 @@ jobs:
         run: docker login -u ${{ env.DOCKER_USER }} -p ${{ env.DOCKER_PASSWORD }}
 
       - name: Push Image to Docker Hub
-        working_directory: ./
+        working-directory: ./
         run: docker push ${{ env.DOCKER_REPO_NAME }}:${{ env.RELEASE_VERSION }}
