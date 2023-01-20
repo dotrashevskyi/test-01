@@ -2,6 +2,8 @@ name: Docker Build Workflow
 on:
   push:
     branches: [main, dev]
+    tags:
+      - '[\d]+[.][\d]+[.][\d]+'
   workflow_dispatch:
 
 jobs:
