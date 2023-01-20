@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo event
-        run: echo "${{github.event}}"
+        run: echo "tag=${GITHUB_REF#refs/*/}"
       - uses: actions/checkout@v3
       - name: Build Docker Image
         working-directory: ./
