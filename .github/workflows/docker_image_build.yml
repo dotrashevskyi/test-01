@@ -1,0 +1,14 @@
+name: Docker Build Workflow
+on:
+  push:
+    branches: [main, dev]
+  workflow_dispatch:
+
+jobs:
+  build-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Docker Image
+        working-directory: ./
+        run: docker build . --file Dockerfile --tag my-app-test:latest
