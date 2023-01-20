@@ -13,7 +13,6 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	port := os.Getenv("PORT");
-	fake := os.Getenv("PORT");
 	http.HandleFunc("/hello", helloHandler)
 	http.ListenAndServe(":" + port, nil)
 }
