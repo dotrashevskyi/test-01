@@ -7,12 +7,27 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-docker-image:
+  test-source-code:
     runs-on: ubuntu-latest
     steps:
+
+
+  publish-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.19
+
+      - name: Test
+        run: go vet ./
+
       - name: Output tag
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      - uses: actions/checkout@v3
+
       - name: Build Docker Image
         working-directory: ./
         run: docker build . --file Dockerfile --tag my-app-test:${{ env.RELEASE_VERSION }}
