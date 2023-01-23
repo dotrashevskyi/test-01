@@ -75,7 +75,7 @@ jobs:
 			"fields": [
 				{
 					"type": "mrkdwn",
-					"text": "*Failed Step name: ${{ steps.build.outputs }}*"
+					"text": "*Failed Step name: ${{ steps }}*"
 				}
 			]
 		  }
