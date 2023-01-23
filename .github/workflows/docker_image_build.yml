@@ -51,4 +51,33 @@ jobs:
           url: ${{ env.WEB_HOOK_URL }}
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json"}'
-          data: '{"text": "Deploy is failed!"}'
+          data: '{
+            "text": "This is notification about failed build!",
+	        "blocks": [
+		  {
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": ":heavy_exclamation_mark: *This is notification about failed build!*"
+			  }
+		  },
+		  {
+			"type": "section",
+			"block_id": "build_link_id",
+			"text": {
+				"type": "mrkdwn",
+				"text": "<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|Failed Build Link>"
+			}
+		  },
+		  {
+			"type": "section",
+			"block_id": "section789",
+			"fields": [
+				{
+					"type": "mrkdwn",
+					"text": "*Failed Step name:*"
+				}
+			]
+		  }
+	    ]
+      }'
