@@ -68,16 +68,6 @@ jobs:
 				"type": "mrkdwn",
 				"text": "<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|Failed Build Link>"
 			}
-		  },
-		  {
-			"type": "section",
-			"block_id": "section789",
-			"fields": [
-				{
-					"type": "mrkdwn",
-					"text": "*Failed Step name: ${{ steps }}*"
-				}
-			]
 		  }
 	    ]
       }'
